@@ -1,6 +1,16 @@
 Useful (?) Sqlite3 Stuff
 ========================
 
+---
+Copyright holder & Original author:
+<br>[shawnw](https://github.com/shawnw/) aka
+[Shawn Wagner &lt;shawnw.mobile@gmail.com&gt;](mailto:shawnw.mobile@gmail.com)
+
+Authoritative location:<br>
+https://github.com/shawnw/useful_sqlite_extensions
+
+---
+
 Extensions
 ----------
 
@@ -19,14 +29,18 @@ in the *docs/* directory for details on individual extensions.
 
 ### Build Instructions ###
 
-    % mkdir build
-    % cd build
-    % cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ../src
-    % make
-    % sqlite3
-    sqlite3> .load ./libstring_funcs
-    sqlite3> SELECT regexp_substr('abc def ghi', '[a-z]{3}', 1, 2);
-    etc.
+~~~sh
+% mkdir build
+% cd build
+% cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ../src
+% make
+% sqlite3
+~~~
+~~~sql
+sqlite3> .load ./libstring_funcs
+sqlite3> SELECT regexp_substr('abc def ghi', '[a-z]{3}', 1, 2);
+etc.
+~~~
 
 cmake will only build extensions that satisfy dependencies (No ICU dev
 package installed, no libstring_funcs, for example).
